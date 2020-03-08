@@ -13,7 +13,7 @@ public class ReadJSONFile {
         JSONParser parser = new JSONParser();
 
         try {
-            Object obj = parser.parse(new FileReader("myJSON.json");
+            Object obj = parser.parse(new FileReader("myJSON.json"));
             JSONObject jsonObject = (JSONObject)obj;
             String name = (String) jsonObject.get("name");
             System.out.println("Name is: " + name);
@@ -27,7 +27,8 @@ public class ReadJSONFile {
             for (String s : (Iterable<String>) coursesArray) {
                 System.out.println("Course: " + s);
             }
-        }
-        catch(FileNotFoundException e) { e.printStackTrace(); }
+        } catch(Exception e) { e.printStackTrace(); }
+
+
     }
 }
