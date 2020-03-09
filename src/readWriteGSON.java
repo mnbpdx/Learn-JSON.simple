@@ -1,4 +1,5 @@
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 
 import java.io.FileNotFoundException;
@@ -10,7 +11,7 @@ public class readWriteGSON {
         Gson g = new Gson();
         try {
             JsonReader reader = new JsonReader(new FileReader("jobs.json"));
-            Job[] jobsArray = g.fromJson(reader, Job[].class);
+            ArrayList<Job> jobsArray = g.fromJson(reader, new TypeToken<ArrayList<Job>>(){}.getType());
             for (Job entry : jobsArray) {
                 System.out.println("Job: " + entry.getTask());
                 System.out.println("Mileage: " + entry.getMileage());
