@@ -1,14 +1,14 @@
 [
   {
-    "doEvery": 5000,
+    "mileage": 5000,
     "task": "Change oil"
   },
   {
-    "doEvery": 10000,
+    "mileage": 10000,
     "task": "Rotate tires"
   },
   {
-    "doEvery": 90000,
+    "mileage": 90000,
     "task": "Change timing belt"
   }
 ]

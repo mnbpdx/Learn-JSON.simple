@@ -1,4 +1,5 @@
 import com.google.gson.Gson;
+import com.google.gson.stream.JsonReader;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -8,10 +9,11 @@ public class readWriteGSON {
     public static void main(String[] args) {
         Gson g = new Gson();
         try {
-            Job[] jobs = g.fromJson(new FileReader("jobs.json"), Job[].class);
-            for (Job job : jobs) {
-                System.out.println("Job: " + job.getTask());
-                System.out.println("Mileage: " + job.getMileage());
+            JsonReader reader = new JsonReader(new FileReader("jobs.json"));
+            Job[] jobsArray = g.fromJson(reader, Job[].class);
+            for (Job entry : jobsArray) {
+                System.out.println("Job: " + entry.getTask());
+                System.out.println("Mileage: " + entry.getMileage());
                 System.out.println();
             }
         }

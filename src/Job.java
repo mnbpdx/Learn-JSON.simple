@@ -1,11 +1,6 @@
 public class Job {
-    private String task;
     private int mileage;
-
-    Job(String task, int mileage) {
-        this.task = task;
-        this.mileage = mileage;
-    }
+    private String task;
 
     public int getMileage() {
         return mileage;
